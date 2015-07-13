@@ -13,3 +13,11 @@ comments. Be sure to read everything. Run lab.js with `node lab1.js`.
 
 
 #### Resources and Collaborators
+I used MDN to research and use the code for
+  -Math.random()
+  -Math.floor
+  -.split() method
+
+Wikipedia for Yoda conditions (I know, I know, but it was helpful)
+
+Javascript & JQuery book by Jon Duckett for naming conventions, as well as the MDN site

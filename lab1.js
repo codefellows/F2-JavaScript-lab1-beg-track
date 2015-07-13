@@ -85,9 +85,11 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 
 // your code goes here
 var chirpOne = sentence1.split(' ');
-var sentence1 = '';
 
 for (var i = 0; i < chirpOne.length; i++) {
+  if (i === 0) {
+    sentence1 = '';
+  }
   var n = chirpOne.length;
   chirpOne[i] = 'chirp';
   sentence1 += chirpOne[i];
@@ -97,7 +99,7 @@ for (var i = 0; i < chirpOne.length; i++) {
   if (i == n - 1) {
     sentence1 += '.';
   }
-  // console.log(sentence1); //a test for progress
+  // console.log(sentence1); //a test for progress/testing/sanityCheck
 }
 
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
@@ -106,9 +108,11 @@ for (var i = 0; i < chirpOne.length; i++) {
 // your code goes here
 var chirpTwo = sentence2.split(' ');
 var i = 0;
-sentence2 = '';
 
 while (i < chirpTwo.length) {
+  if (i === 0) {
+    sentence2 = '';
+  }
   var n = chirpTwo.length;
   chirpTwo[i] = 'chirp';
   sentence2 += chirpTwo[i];
@@ -143,8 +147,7 @@ var nextAnimal;
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
 // your code goes here
-// Random generator code via MDN Website
-var max = favoriteAnimals.length - 1; //lenght of array, minus 1 to access the last element in the array
+var max = favoriteAnimals.length - 1; //length of array, minus 1 to access the last element in the array
 var min = 0; //to access the first element of the array
 var randomAnimal = Math.floor(Math.random() * (max - min + 1)) + min;
 nextAnimal = favoriteAnimals[randomAnimal];
