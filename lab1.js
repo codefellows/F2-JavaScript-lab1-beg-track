@@ -45,8 +45,8 @@ function assert(expression, failureMessage) {
  That will help later when you run jscs.
 */
 
-assert(1 === 1, '1 equals 1 - this assert will pass.');
-assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
+// assert(1 === 1, '1 equals 1 - this assert will pass.');
+// assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.');
 
 /* ===========================================================================
 ------------------Assertions (8 points total)---------------------------------
@@ -60,6 +60,9 @@ assert(1 === 2, 'this is an example of a failing assertion. 1 does not equal 2.'
 */
 
 //your code goes here
+var tiger = 'tiger';
+assert(tiger === 'tiger', 'This will work as tiger is same string');
+assert(tiger === 'lions', 'This will not work as the two strings are not the same');
 
 /* ========================================================================
 ----------------- Meerkats (20 points total)-------------------------------
@@ -81,11 +84,43 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 // 'chirp' (10 points)
 
 // your code goes here
+var chirpOne = sentence1.split(' ');
+var sentence1 = '';
+
+for (var i = 0; i < chirpOne.length; i++) {
+  var n = chirpOne.length;
+  chirpOne[i] = 'chirp';
+  sentence1 += chirpOne[i];
+  if (i < n - 1) {
+    sentence1 += ' ';
+  }
+  if (i == n - 1) {
+    sentence1 += '.';
+  }
+  // console.log(sentence1); //a test for progress
+}
 
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
 // with 'chirp' (10 points)
 
 // your code goes here
+var chirpTwo = sentence2.split(' ');
+var i = 0;
+sentence2 = '';
+
+while (i < chirpTwo.length) {
+  var n = chirpTwo.length;
+  chirpTwo[i] = 'chirp';
+  sentence2 += chirpTwo[i];
+  if (i < n - 1) {
+    sentence2 += ' ';
+  }
+  if (i == n - 1) {
+    sentence2 += '.';
+  }
+  i++;
+  // console.log(sentence2) sanity check
+}
 
 // Leave these assertions as-is! If they pass, your code works.
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
@@ -108,6 +143,11 @@ var nextAnimal;
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
 // your code goes here
+// Random generator code via MDN Website
+var max = favoriteAnimals.length - 1; //lenght of array, minus 1 to access the last element in the array
+var min = 0; //to access the first element of the array
+var randomAnimal = Math.floor(Math.random() * (max - min + 1)) + min;
+nextAnimal = favoriteAnimals[randomAnimal];
 
 assert(nextAnimal, 'assign something to nextAnimal');
 
@@ -124,10 +164,10 @@ assert(nextAnimal, 'assign something to nextAnimal');
 // don't require quotes for the code to work. Remove the unnecessary quotes.
 
 var animalExhibitStats = {
-  'numberOpen': 13,
+  numberOpen: 13,
   'number closed': 2,
   'petting-zoo-open': true,
-  'mostPopular': 'Lucky the Emperor Penguin',
+  mostPopular: 'Lucky the Emperor Penguin',
   '2ndMostPopular': 'Dumbo the Depressed Donkey'
 };
 
@@ -138,7 +178,7 @@ var animalExhibitStats = {
  notation with dot notation wherever possible.
 */
 
-assert(animalExhibitStats['numberOpen'] === 13, 'there should be 13 open exhibits');
+assert(animalExhibitStats.numberOpen === 13, 'there should be 13 open exhibits');
 assert(animalExhibitStats['number closed'] === 2, 'there should be 2 closed exhibits');
 assert(animalExhibitStats['petting-zoo-open'], 'hey! =( i was promised meerkats!');
 assert(animalExhibitStats['2ndMostPopular'] === 'Dumbo the Depressed Donkey',
@@ -149,6 +189,7 @@ assert(animalExhibitStats['2ndMostPopular'] === 'Dumbo the Depressed Donkey',
 // Use the above examples to guide you.
 
 // your assert goes here
+assert(animalExhibitStats.mostPopular === 'Lucky the Emperor Penguin', 'Lucky is the most popular animal');
 
 /* ==================================================================
 ----------------- Code Style (10 points) ----------------------------
