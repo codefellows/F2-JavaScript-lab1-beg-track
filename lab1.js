@@ -84,47 +84,26 @@ var sentence2 = 'Come over here so you can scratch my belly.';
 // 'chirp' (10 points)
 
 // your code goes here
-var chirpOne = sentence1.split(' ');
+var array = sentence1.split(' ');
 
-for (var i = 0; i < chirpOne.length; i++) {
-  if (i === 0) {
-    sentence1 = '';
-  }
-  var n = chirpOne.length;
-  chirpOne[i] = 'chirp';
-  sentence1 += chirpOne[i];
-  if (i < n - 1) {
-    sentence1 += ' ';
-  }
-  if (i == n - 1) {
-    sentence1 += '.';
-  }
-  // console.log(sentence1); //a test for progress/testing/sanityCheck
+for (var i = 0; i < array.length; i++) {
+  array[i] = 'chirp';
 }
+
+sentence1 = array.join(' ') + '.';
 
 // TODO: part #2: use a while or do-while loop to replace the words in sentence 2
 // with 'chirp' (10 points)
 
 // your code goes here
-var chirpTwo = sentence2.split(' ');
+var arrayWhileLoop = sentence2.split(' ');
 var i = 0;
 
-while (i < chirpTwo.length) {
-  if (i === 0) {
-    sentence2 = '';
-  }
-  var n = chirpTwo.length;
-  chirpTwo[i] = 'chirp';
-  sentence2 += chirpTwo[i];
-  if (i < n - 1) {
-    sentence2 += ' ';
-  }
-  if (i == n - 1) {
-    sentence2 += '.';
-  }
+while (i < arrayWhileLoop.length) {
+  arrayWhileLoop[i] = 'chirp';
   i++;
-  // console.log(sentence2) sanity check
 }
+sentence2 = arrayWhileLoop.join(' ') + '.';
 
 // Leave these assertions as-is! If they pass, your code works.
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
