@@ -10,6 +10,7 @@
 comments. Be sure to read everything. Run lab.js with `node lab1.js`.
 8. Before you turn in your assignment, run `grunt` to check for jshint and jscs errors/warnings. Fix all the errors.
 9. List any resources you used (blogs, stack overflow questions, etc.) or collaborators below.
-
+    http://stackoverflow.com/questions/4550505/getting-random-value-from-an-array
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 #### Resources and Collaborators
